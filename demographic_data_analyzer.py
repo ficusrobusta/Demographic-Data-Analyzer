@@ -36,7 +36,7 @@ def calculate_demographic_data(print_data=True):
     rich_percentage = df[(df['hours-per-week'] == 1) & (df['salary'] == '>50K')].shape[0] / num_min_workers * 100
 
     # What country has the highest percentage of people that earn >50K
-    # highest_earning_country = (df[df['salary'] == '>50K','native-country'].value_counts()/ df['native-country'].value_counts() * 100).sort_values(ascending=False).idxmax()
+    highest_earning_country = (df.loc[df['salary'] == '>50K','native-country'].value_counts()/ df['native-country'].value_counts() * 100).sort_values(ascending=False).idxmax()
     
     # highest_earning_country_percentage = df[(df['salary'] == '>50K') & (df['native-country'] == 'Iran')].value_counts() / df[df['native-country'] == 'Iran'].value_counts() * 100
 
